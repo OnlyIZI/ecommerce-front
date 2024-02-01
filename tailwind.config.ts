@@ -7,7 +7,24 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          blue: "hsl(var(--primary-blue))",
+          purple: "hsl(var(--primary-purple))",
+          green: "hsl(var(--primary-green))",
+          cyan: "hsl(var(--primary-cyan))",
+        },
+        secundary: {
+          blue: "hsl(var(--secundary-blue))",
+          purple: "hsl(var(--secundary-purple))",
+          green: "hsl(var(--secundary-green))",
+        },
+        background: {
+          card: "hsl(var(--card-background))",
+        },
+      },
+    },
   },
   plugins: [],
 }
