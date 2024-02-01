@@ -12,5 +12,13 @@
     --secundary-purple: 231 41% 79%;
     --secundary-green: 158 29% 76%;
     --card-background: 210 2% 98%;
+
+    --background: white;
+    --foreground: black;
+  }
+
+  [data-theme='dark'] {
+    --background: black;
+    --foreground: white;
   }
 }
