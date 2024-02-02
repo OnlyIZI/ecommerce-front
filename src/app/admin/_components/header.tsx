@@ -6,7 +6,8 @@ export const HeaderAdmin = () => {
 
   return (
     <header>
-      <button>mode</button>
+      <button onClick={() => setTheme('light')}>Light</button>
+      <button onClick={() => setTheme('dark')}>Dark</button>
     </header>
   )
 }
