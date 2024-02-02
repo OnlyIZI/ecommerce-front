@@ -5,10 +5,12 @@ import { SideBar } from "@/icons/sideBar"
 import { SideBarReverse } from "@/icons/sideBarReverse"
 import { Star } from "@/icons/star"
 import { Sun } from "@/icons/sun"
+import { useAside } from "@/store/useAside"
 import { useTheme } from "next-themes"
 
 export const HeaderAdmin = () => {
   const { theme, setTheme } = useTheme()
+  const setIsOpen = useAside((state) => state.setStatus)
 
   function handleToggle() {
     if (theme == "light") return setTheme("dark")
@@ -36,7 +38,7 @@ export const HeaderAdmin = () => {
         <button>
           <Bell width={20} height={20} />
         </button>
-        <button>
+        <button onClick={() => setIsOpen()}>
           <SideBarReverse width={20} height={20} />
         </button>
       </div>

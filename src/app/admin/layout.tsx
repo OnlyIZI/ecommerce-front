@@ -1,20 +1,12 @@
-"use client";
-import { useState } from "react";
-
 // Components
-import { HeaderAdmin } from "@/app/admin/_components/header";
-import { AsideAdmin } from "./_components/aside";
-
-// Framer Motion
-import { motion } from "framer-motion";
-
+import { HeaderAdmin } from "@/app/admin/_components/header"
+import { AsideAdmin } from "./_components/aside"
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-
   return (
     <div className="flex min-h-screen w-full overflow-hidden">
       <aside className="border border-primary-blue">Aside left</aside>
@@ -24,7 +16,7 @@ export default function AdminLayout({
         </header>
         <main className="border border-primary-green">{children}</main>
       </div>
-      <aside className="border border-primary-cyan py-4 px-4 w-64 xl:w-[15%]">
+      <aside className="w-64 border border-primary-cyan px-4 py-4 xl:w-[15%]">
         <AsideAdmin />
       </aside>
     </div>
