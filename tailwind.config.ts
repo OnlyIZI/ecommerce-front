@@ -9,20 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        background: "hsl(var(--background))",
         primary: {
+          default: "hsl(var(--primary))",
           blue: "hsl(var(--primary-blue))",
-          purple: "hsl(var(--primary-purple))",
-          green: "hsl(var(--primary-green))",
-          cyan: "hsl(var(--primary-cyan))",
+          foreground: "hsl(var(--primary-foreground))",
         },
-        secundary: {
-          blue: "hsl(var(--secundary-blue))",
-          purple: "hsl(var(--secundary-purple))",
-          green: "hsl(var(--secundary-green))",
+        secondary: {
+          default: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
-        background: {
-          card: "hsl(var(--card-background))",
+        semantic: "hsl(var(--semantic))",
+        success: {
+          default: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
         },
+        warn: {
+          default: "hsl(var(--warn))",
+          foreground: "hsl(var(--warn-foreground))",
+        },
+        border: "hsl(var(--border))",
       },
     },
   },

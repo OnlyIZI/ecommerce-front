@@ -4,21 +4,36 @@
 
 @layer base {
   :root {
-    --primary-blue: 201 11% 95%;
-    --primary-purple: 215 7% 93%;
-    --primary-green: 124 22% 83%;
-    --primary-cyan: 205 23% 76%;
-    --secundary-blue: 202 31% 85%;
-    --secundary-purple: 231 41% 79%;
-    --secundary-green: 158 29% 76%;
-    --card-background: 210 2% 98%;
-
-    --background: white;
-    --foreground: black;
+    --background: 0 0% 100%;
+    --primary: 0 0% 11%;
+    --primary-blue: 201 100% 95%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 231 94% 79%;
+    --secondary-foreground: 0 0% 11%;
+    --semantic: 205 40% 76%;
+    --destructive: 0 100% 64%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 158 54% 76%;
+    --success-foreground: 0 0% 100%;
+    --warn: 47 100% 80%;
+    --warn-foreground: 0 0% 11%;
+    --border: 0 0% 40%;
   }
 
-  [data-theme='dark'] {
-    --background: black;
-    --foreground: white;
+  [data-theme="dark"] {
+    --background: 0 0% 11%;
+    --primary: 239 78% 87%;
+    --primary-blue: 201 100% 95%;
+    --primary-foreground: 0 0% 11%;
+    --secondary: 231 94% 79%;
+    --secondary-foreground: 0 0% 11%;
+    --semantic: 205 40% 76%;
+    --destructive: 0 100% 64%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 158 54% 76%;
+    --success-foreground: 0 0% 100%;
+    --warn: 47 100% 80%;
+    --warn-foreground: 0 0% 11%;
+    --border: 0 0% 60%;
   }
 }
