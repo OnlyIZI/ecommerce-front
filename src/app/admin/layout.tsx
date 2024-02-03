@@ -1,6 +1,7 @@
 // Components
 import { HeaderAdmin } from "@/app/admin/_components/header"
-import { AsideAdmin } from "./_components/aside"
+import { AsideAdmin } from "./_components/asideActivity"
+import { AsideMenu } from "@/app/admin/_components/asideMenu"
 
 export default function AdminLayout({
   children,
@@ -9,7 +10,7 @@ export default function AdminLayout({
 }) {
   return (
     <div className="flex min-h-screen w-full overflow-hidden">
-      <aside className="border border-primary-blue">Aside left</aside>
+        <AsideMenu />
       <div className="flex grow flex-col">
         <header className="border border-primary-purple">
           <HeaderAdmin />
