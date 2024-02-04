@@ -15,7 +15,7 @@ export default function AdminLayout({
                 <HeaderAdmin />
                 <main>{children}</main>
             </div>
-            <aside className="border-primary-default border">
+            <aside className="border border-primary-default">
                 <AsideActivity />
             </aside>
         </div>
