@@ -2,11 +2,11 @@
 
 // hooks
 import { UseMediaQuery } from "@/hooks/useMediaQuery"
-import { ElementRef, useEffect, useRef, useState } from "react"
+import { ElementRef, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
 // icons
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
+import { LuChevronLeft. } from "react-icons/lu"
 import { UserAvatar } from "@/app/admin/_components/asideMenu/_components/userAvatar"
 
 export const AsideMenu = () => {
@@ -55,9 +55,9 @@ export const AsideMenu = () => {
                 </div>
                 {/* sidebar border */}
                 <div className="absolute right-0 top-0 h-full w-0.5 bg-border group-hover/aside:w-1" />
-                {/* CRIAR NO COMPONENTE DE PERFIL O BOTÃO DE ABRIR A SIDEBAR */}
                 <UserAvatar />
                 <section>
+                    {/* #TODO adicionar componente de seções */}
                     <div>Seção 1</div>
                     <div>Seção 2</div>
                 </section>
