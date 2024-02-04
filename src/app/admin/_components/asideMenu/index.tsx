@@ -6,7 +6,7 @@ import { ElementRef, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
 // icons
-import { LuChevronLeft. } from "react-icons/lu"
+import { LuChevronLeft } from "react-icons/lu"
 import { UserAvatar } from "@/app/admin/_components/asideMenu/_components/userAvatar"
 
 export const AsideMenu = () => {
