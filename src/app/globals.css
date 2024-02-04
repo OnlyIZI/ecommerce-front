@@ -3,37 +3,37 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --primary: 0 0% 11%;
-    --primary-blue: 201 100% 95%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 231 94% 79%;
-    --secondary-foreground: 0 0% 11%;
-    --semantic: 205 40% 76%;
-    --destructive: 0 100% 64%;
-    --destructive-foreground: 0 0% 98%;
-    --success: 158 54% 76%;
-    --success-foreground: 0 0% 100%;
-    --warn: 47 100% 80%;
-    --warn-foreground: 0 0% 11%;
-    --border: 0 0% 40%;
-  }
+    :root {
+        --background: 0 0% 100%;
+        --primary: 0 0% 11%;
+        --primary-blue: 201 100% 95%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 231 94% 79%;
+        --secondary-foreground: 0 0% 11%;
+        --semantic: 205 40% 76%;
+        --destructive: 0 100% 64%;
+        --destructive-foreground: 0 0% 98%;
+        --success: 158 54% 76%;
+        --success-foreground: 0 0% 100%;
+        --warn: 47 100% 80%;
+        --warn-foreground: 0 0% 11%;
+        --border: 0 0% 40%;
+    }
 
-  [data-theme="dark"] {
-    --background: 0 0% 11%;
-    --primary: 239 78% 87%;
-    --primary-blue: 201 100% 95%;
-    --primary-foreground: 0 0% 11%;
-    --secondary: 231 94% 79%;
-    --secondary-foreground: 0 0% 11%;
-    --semantic: 205 40% 76%;
-    --destructive: 0 100% 64%;
-    --destructive-foreground: 0 0% 98%;
-    --success: 158 54% 76%;
-    --success-foreground: 0 0% 100%;
-    --warn: 47 100% 80%;
-    --warn-foreground: 0 0% 11%;
-    --border: 0 0% 60%;
-  }
+    .dark {
+        --background: 0 0% 11%;
+        --primary: 239 78% 87%;
+        --primary-blue: 201 100% 95%;
+        --primary-foreground: 0 0% 11%;
+        --secondary: 231 94% 79%;
+        --secondary-foreground: 0 0% 11%;
+        --semantic: 205 40% 76%;
+        --destructive: 0 100% 64%;
+        --destructive-foreground: 0 0% 98%;
+        --success: 158 54% 76%;
+        --success-foreground: 0 0% 100%;
+        --warn: 47 100% 80%;
+        --warn-foreground: 0 0% 11%;
+        --border: 0 0% 60%;
+    }
 }

@@ -9,7 +9,7 @@ import contentBlock from "./contentBlock/index"
 import { motion } from "framer-motion"
 import { useAside } from "@/store/useAside"
 
-export const AsideAdmin = () => {
+export const AsideActivity = () => {
   const isOpened = useAside((state) => state.status)
 
   const motionOptions = {
