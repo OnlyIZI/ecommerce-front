@@ -5,9 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+<<<<<<< HEAD
   '@radix-ui/react-slot':
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.51)(react@18.2.0)
+=======
+>>>>>>> a9d3cf0d69d5deacfc2feed68017bba208700262
   axios:
     specifier: ^1.6.7
     version: 1.6.7
@@ -2146,6 +2149,10 @@ packages:
       '@babel/runtime': 7.23.9
       '@types/react': 18.2.51
       react: 18.2.0
+<<<<<<< HEAD
+=======
+    dev: true
+>>>>>>> a9d3cf0d69d5deacfc2feed68017bba208700262
 
   /@radix-ui/react-context@1.0.1(@types/react@18.2.51)(react@18.2.0):
     resolution: {integrity: sha512-ebbrdFoYTcuZ0v4wG5tedGnp9tzcV8awzsxYph7gXUyvnNLuTIcCk1q17JEbnVhXAKG9oX3KtchwiMIAYp9NLg==}
@@ -2428,6 +2435,10 @@ packages:
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.51)(react@18.2.0)
       '@types/react': 18.2.51
       react: 18.2.0
+<<<<<<< HEAD
+=======
+    dev: true
+>>>>>>> a9d3cf0d69d5deacfc2feed68017bba208700262
 
   /@radix-ui/react-toggle-group@1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.51)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Uaj/M/cMyiyT9Bx6fOZO0SAG4Cls0GptBWiBmBxofmDbNVnYYoyRWj/2M/6VCi/7qcXFWnHhRUfdfZFvvkuu8A==}

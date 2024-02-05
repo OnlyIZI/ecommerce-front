@@ -17,7 +17,7 @@ export const HeaderAdmin = () => {
     }
 
     return (
-        <section className="border-b-primary-foreground flex h-14 w-full items-center justify-between border-b px-8">
+        <header className="flex h-14 w-full items-center justify-between border-b border-b-primary-foreground px-8">
             <div className="flex gap-4">
                 <button>
                     <Star width={20} height={20} />
@@ -38,6 +38,6 @@ export const HeaderAdmin = () => {
                     <SideBarReverse width={20} height={20} />
                 </button>
             </div>
-        </section>
+        </header>
     )
 }
