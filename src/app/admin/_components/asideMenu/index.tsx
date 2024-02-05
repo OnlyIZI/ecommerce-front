@@ -8,7 +8,12 @@ import { cn } from "@/lib/utils"
 // icons
 import { LuChevronLeft } from "react-icons/lu"
 import { UserAvatar } from "@/app/admin/_components/asideMenu/_components/userAvatar"
-import { Accordion } from "@/components/accordion"
+import {
+    AccordionContent,
+    AccordionItem,
+    AccordionRoot,
+    AccordionTrigger,
+} from "@/components/accordion"
 
 export const AsideMenu = () => {
     const isMobile = UseMediaQuery("(max-width: 768px")
@@ -54,9 +59,16 @@ export const AsideMenu = () => {
             <div className="absolute right-0 top-0 h-full w-0.5 bg-border group-hover/aside:w-1" />
             <UserAvatar />
             <section className="p-1">
-                <Accordion.Root>
-                    <Accordion.Item label="seção 1" />
-                </Accordion.Root>
+                <div className="bg-red-900 pl-4">
+                    <AccordionRoot>
+                        <AccordionTrigger>Seção 1</AccordionTrigger>
+                        <AccordionContent>
+                            <AccordionItem className="bg-green-400">
+                                esse é o item 1
+                            </AccordionItem>
+                        </AccordionContent>
+                    </AccordionRoot>
+                </div>
             </section>
         </aside>
     )
