@@ -87,7 +87,7 @@ const AccordionTrigger = React.forwardRef<
     AccordionTriggerProps
 >(({ className, asChild, variant, ...props }, ref) => {
     const Comp = asChild ? Slot : "div"
-    const { handleState, isOpen } = React.useContext(AccordionContext)
+    const { handleState } = React.useContext(AccordionContext)
 
     return (
         <div onClick={handleState} className={cn(triggerVariants({ variant }))}>
@@ -102,22 +102,17 @@ AccordionTrigger.displayName = "AccordionTrigger"
 // ____________________ Content ____________________
 
 interface AccordionContentProps extends React.HTMLAttributes<HTMLDivElement> {
-    children?: React.ReactNode
+    asChild?: boolean
 }
 
 const AccordionContent = React.forwardRef<
     HTMLDivElement,
     AccordionContentProps
->(({ className, children, ...props }, ref) => {
+>(({ className, asChild, ...props }, ref) => {
     const { isOpen } = React.useContext(AccordionContext)
+    const Comp = asChild ? Slot : "div"
 
-    return (
-        isOpen && (
-            <div ref={ref} className={cn(className)} {...props}>
-                {children}
-            </div>
-        )
-    )
+    return isOpen && <Comp ref={ref} className={cn(className)} {...props} />
 })
 
 AccordionContent.displayName = "AccordionContent"
@@ -131,10 +126,7 @@ const AccordionItem = React.forwardRef<HTMLDivElement, ItemProps>(
     ({ className, asChild, ...props }, ref) => {
         const Comp = asChild ? Slot : "div"
 
-        return (
-            <Comp ref={ref} className={cn(className)} {...props} />
-
-        )
+        return <Comp ref={ref} className={cn(className)} {...props} />
     }
 )
 

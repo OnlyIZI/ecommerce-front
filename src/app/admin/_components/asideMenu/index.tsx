@@ -62,10 +62,12 @@ export const AsideMenu = () => {
                 <div className="bg-red-900 pl-4">
                     <AccordionRoot>
                         <AccordionTrigger>Seção 1</AccordionTrigger>
-                        <AccordionContent>
-                            <AccordionItem className="bg-green-400">
-                                esse é o item 1
-                            </AccordionItem>
+                        <AccordionContent asChild>
+                            <ul>
+                                <AccordionItem asChild>
+                                    <button>teste</button>
+                                </AccordionItem>
+                            </ul>
                         </AccordionContent>
                     </AccordionRoot>
                 </div>
