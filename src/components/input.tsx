@@ -3,38 +3,48 @@ import { cva, type VariantProps } from "class-variance-authority"
 import React from "react"
 import { cn } from "@/lib/utils"
 
-type InputProps = InputHTMLAttributes<HTMLInputElement> &
-    VariantProps<typeof inputVariants> & {
-        error?: string
-    }
+interface InputProps
+    extends InputHTMLAttributes<HTMLInputElement>,
+        VariantProps<typeof inputVariants> {
+    startContent?: React.ReactNode
+    endContent?: React.ReactNode
+    error?: string
+}
 
-const inputVariants = cva(
-    "p-2 border outline-none rounded-xl focus:shadow-md",
-    {
-        variants: {
-            variant: {
-                default: "bg-input",
-                error: "border-red-500",
-            },
+const inputVariants = cva("p-2 border rounded-xl focus-within:shadow-md", {
+    variants: {
+        variant: {
+            default: "bg-input",
+            error: "border-red-500",
         },
-        defaultVariants: {
-            variant: "default",
-        },
-    }
-)
+    },
+    defaultVariants: {
+        variant: "default",
+    },
+})
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-    ({ variant, className, error, ...props }, ref) => {
+    (
+        { variant, className, error, startContent, endContent, ...props },
+        ref
+    ) => {
         return (
             <div className="flex flex-col items-start gap-1">
-                <input
-                    {...props}
-                    className={cn(inputVariants({ variant, className }))}
-                    ref={ref}
-                />
-                {error && (
-                    <p className="text-sm text-red-500 shadow-md">{error}</p>
-                )}
+                <div
+                    className={cn(
+                        `flex items-center justify-center`,
+                        inputVariants({ variant, className })
+                    )}
+                >
+                    {startContent}
+                    <input
+                        {...props}
+                        className="mx-1 focus:outline-none"
+                        ref={ref}
+                    />
+                    {endContent}
+                </div>
+                {error && <p className="text-sm text-red-500">{error}</p>}
             </div>
         )
     }
