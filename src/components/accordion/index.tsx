@@ -34,10 +34,10 @@ const AccordionProvider = ({ children }: { children: React.ReactNode }) => {
 }
 
 // ____________________ Root ____________________
-const RootProps = cva("", {
+const rootVariants = cva("w-full rounded-md px-2 py-1", {
     variants: {
         variant: {
-            default: "",
+            default: "hover:bg-border/10",
         },
     },
     defaultVariants: {
@@ -46,18 +46,25 @@ const RootProps = cva("", {
 })
 
 interface AccordionRootProps
-    extends React.HTMLAttributes<HTMLButtonElement>,
-        VariantProps<typeof RootProps> {
+    extends React.HTMLAttributes<HTMLDivElement>,
+        VariantProps<typeof rootVariants> {
     children?: React.ReactNode
+    asChild?: boolean
 }
 
-const AccordionRoot = React.forwardRef<HTMLButtonElement, AccordionRootProps>(
-    ({ children, className, variant, ...props }, ref) => {
+const AccordionRoot = React.forwardRef<HTMLDivElement, AccordionRootProps>(
+    ({ children, className, asChild, variant, ...props }, ref) => {
+        const Comp = asChild ? Slot : "div"
+
         return (
             <AccordionProvider>
-                <button ref={ref} className={cn({ variant })} {...props}>
+                <Comp
+                    ref={ref}
+                    className={cn(rootVariants({ variant }))}
+                    {...props}
+                >
                     {children}
-                </button>
+                </Comp>
             </AccordionProvider>
         )
     }
@@ -65,10 +72,10 @@ const AccordionRoot = React.forwardRef<HTMLButtonElement, AccordionRootProps>(
 
 // ____________________ Trigger ____________________
 
-const triggerVariants = cva("flex items-center gap-1", {
+const triggerVariants = cva("flex items-center gap-1 w-full", {
     variants: {
         variant: {
-            default: "bg-red-400 hover:bg-red-600",
+            default: "",
         },
     },
     defaultVariants: {
@@ -87,12 +94,19 @@ const AccordionTrigger = React.forwardRef<
     AccordionTriggerProps
 >(({ className, asChild, variant, ...props }, ref) => {
     const Comp = asChild ? Slot : "div"
-    const { handleState } = React.useContext(AccordionContext)
+    const { handleState, isOpen } = React.useContext(AccordionContext)
 
     return (
-        <div onClick={handleState} className={cn(triggerVariants({ variant }))}>
-            <LuChevronRight className="h-4 w-4" />
-            <Comp ref={ref} className={cn(className)} {...props}></Comp>
+        <div
+            role="button"
+            ref={ref}
+            onClick={handleState}
+            className={cn(triggerVariants({ variant, className }))}
+        >
+            <LuChevronRight
+                className={`h-4 w-4 transition-all duration-300 ease-in-out ${isOpen && "rotate-90"}`}
+            />
+            <Comp ref={ref} {...props}></Comp>
         </div>
     )
 })
@@ -100,33 +114,74 @@ const AccordionTrigger = React.forwardRef<
 AccordionTrigger.displayName = "AccordionTrigger"
 
 // ____________________ Content ____________________
+const contentVariants = cva("flex flex-col items-start px-6", {
+    variants: {
+        variant: {
+            default: "",
+        },
+    },
+    defaultVariants: {
+        variant: "default",
+    },
+})
 
-interface AccordionContentProps extends React.HTMLAttributes<HTMLDivElement> {
+interface AccordionContentProps
+    extends React.HTMLAttributes<HTMLDivElement>,
+        VariantProps<typeof contentVariants> {
     asChild?: boolean
 }
 
 const AccordionContent = React.forwardRef<
     HTMLDivElement,
     AccordionContentProps
->(({ className, asChild, ...props }, ref) => {
+>(({ className, asChild, variant, ...props }, ref) => {
     const { isOpen } = React.useContext(AccordionContext)
     const Comp = asChild ? Slot : "div"
 
-    return isOpen && <Comp ref={ref} className={cn(className)} {...props} />
+    return (
+        isOpen && (
+            <Comp
+                ref={ref}
+                className={cn(contentVariants({ variant, className }))}
+                {...props}
+            />
+        )
+    )
 })
 
 AccordionContent.displayName = "AccordionContent"
 
 // ____________________ Item ____________________
+const itemVariants = cva(
+    "px-2 py-1 text-start rounded-md font-light text-border hover:text-white w-full",
+    {
+        variants: {
+            variant: {
+                default: "hover:bg-border/20",
+            },
+        },
+        defaultVariants: {
+            variant: "default",
+        },
+    }
+)
 
-interface ItemProps extends React.HTMLAttributes<HTMLElement> {
+interface ItemProps
+    extends React.HTMLAttributes<HTMLElement>,
+        VariantProps<typeof itemVariants> {
     asChild?: boolean
 }
-const AccordionItem = React.forwardRef<HTMLDivElement, ItemProps>(
-    ({ className, asChild, ...props }, ref) => {
-        const Comp = asChild ? Slot : "div"
+const AccordionItem = React.forwardRef<HTMLButtonElement, ItemProps>(
+    ({ className, variant, asChild, ...props }, ref) => {
+        const Comp = asChild ? Slot : "button"
 
-        return <Comp ref={ref} className={cn(className)} {...props} />
+        return (
+            <Comp
+                ref={ref}
+                className={cn(itemVariants({ className, variant }))}
+                {...props}
+            />
+        )
     }
 )
 
