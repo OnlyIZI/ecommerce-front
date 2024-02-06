@@ -6,7 +6,7 @@ import { ElementRef, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
 // icons
-import { LuChevronLeft } from "react-icons/lu"
+import { LuChevronLeft, LuClipboardEdit } from "react-icons/lu"
 import { UserAvatar } from "@/app/admin/_components/asideMenu/_components/userAvatar"
 import {
     AccordionContent,
@@ -56,21 +56,21 @@ export const AsideMenu = () => {
                 />
             </div>
             {/* sidebar border */}
-            <div className="absolute right-0 top-0 h-full w-0.5 bg-border group-hover/aside:w-1" />
+            <div className="absolute right-0 top-0 h-full w-0.5 bg-border" />
             <UserAvatar />
             <section className="p-1">
-                <div className="bg-red-900 pl-4">
-                    <AccordionRoot>
-                        <AccordionTrigger>Seção 1</AccordionTrigger>
-                        <AccordionContent asChild>
-                            <ul>
-                                <AccordionItem asChild>
-                                    <button>teste</button>
-                                </AccordionItem>
-                            </ul>
-                        </AccordionContent>
-                    </AccordionRoot>
-                </div>
+                <AccordionRoot>
+                    <AccordionTrigger asChild>
+                        <div className="flex items-center gap-1 ">
+                            <LuClipboardEdit /> Produtos
+                        </div>
+                    </AccordionTrigger>
+                    <AccordionContent>
+                        <AccordionItem>Adicionar</AccordionItem>
+                        <AccordionItem>Editar</AccordionItem>
+                        <AccordionItem>Remover</AccordionItem>
+                    </AccordionContent>
+                </AccordionRoot>
             </section>
         </aside>
     )
