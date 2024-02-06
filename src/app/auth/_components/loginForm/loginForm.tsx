@@ -10,7 +10,7 @@ import { Eye } from "@/icons/eye"
 import { EyeSlash } from "@/icons/eyeSlash"
 import { SyntheticEvent, useState } from "react"
 
-export const RegisterForm = () => {
+export const LoginForm = () => {
     const [show, setShow] = useState(true)
 
     function handleClick(e: SyntheticEvent) {
@@ -22,11 +22,6 @@ export const RegisterForm = () => {
         <form className="flex flex-col gap-3">
             <InputRoot>
                 <InputContainer>
-                    <Input placeholder="Nome" />
-                </InputContainer>
-            </InputRoot>
-            <InputRoot>
-                <InputContainer>
                     <Input placeholder="Email" />
                 </InputContainer>
             </InputRoot>
@@ -35,26 +30,6 @@ export const RegisterForm = () => {
                     <Input
                         type={`${show ? "password" : "text"}`}
                         placeholder="Senha"
-                    />
-                    <InputContent>
-                        <button
-                            className="flex items-center justify-center"
-                            onClick={handleClick}
-                        >
-                            {show ? (
-                                <Eye width={22} height={22} />
-                            ) : (
-                                <EyeSlash width={22} height={22} />
-                            )}
-                        </button>
-                    </InputContent>
-                </InputContainer>
-            </InputRoot>
-            <InputRoot>
-                <InputContainer>
-                    <Input
-                        type={`${show ? "password" : "text"}`}
-                        placeholder="Confirmar senha"
                     />
                     <InputContent>
                         <button
