@@ -32,13 +32,16 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         ref
     ) => {
         return (
-            <div className="flex flex-col items-start gap-1">
+            <div className={`flex flex-col items-start gap-1 ${error && 'border-red-400'}`}>
+ ----------------------------------
                 <div
                     className={cn(
                         `flex items-center justify-center`,
                         inputVariants({ variant, className })
                     )}
                 >
+ ----------------------------------
+
                     {startContent}
                     <input
                         {...props}
@@ -47,8 +50,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     />
                     {endContent}
                 </div>
+
                 {error && <p className="text-sm text-red-500">{error}</p>}
+
             </div>
         )
     }
 )
+
+

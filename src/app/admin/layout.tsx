@@ -11,7 +11,7 @@ export default function AdminLayout({
 }) {
     return (
         <div className="flex min-h-screen w-full overflow-hidden">
-            <AsideMenu />zz
+            <AsideMenu />
             <div className="flex grow flex-col">
                 <HeaderAdmin />
                 <main>{children}
