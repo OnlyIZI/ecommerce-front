@@ -11,17 +11,20 @@ interface InputProps
     error?: string
 }
 
-const inputVariants = cva("p-2 border rounded-xl focus-within:shadow-md", {
-    variants: {
-        variant: {
-            default: "bg-input",
-            error: "border-red-500",
+const inputVariants = cva(
+    "p-2 border rounded-xl outline-1 focus-within:outline",
+    {
+        variants: {
+            variant: {
+                default: "bg-input",
+                error: "border-red-500 outline-red-500",
+            },
         },
-    },
-    defaultVariants: {
-        variant: "default",
-    },
-})
+        defaultVariants: {
+            variant: "default",
+        },
+    }
+)
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     (
@@ -39,7 +42,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     {startContent}
                     <input
                         {...props}
-                        className="mx-1 focus:outline-none"
+                        className="mx-1 bg-transparent focus:outline-none"
                         ref={ref}
                     />
                     {endContent}
