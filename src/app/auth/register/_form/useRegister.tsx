@@ -6,7 +6,6 @@ import { useRouter } from "next/router"
 import { useForm } from "react-hook-form"
 
 export const UseRegister = () => {
-    const login = useUser((state) => state.login)
     const router = useRouter()
 
     const {
@@ -28,8 +27,6 @@ export const UseRegister = () => {
         })
 
         if (response.status == 201) {
-            const response = await api.get("/user/get")
-            login(response.data)
             router.push("/")
         }
 

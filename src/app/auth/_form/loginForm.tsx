@@ -9,31 +9,10 @@ import {
 import { Eye } from "@/icons/eye"
 import { EyeSlash } from "@/icons/eyeSlash"
 import { SyntheticEvent, useState } from "react"
-import z from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { api } from "@/lib/api"
-import { useForm } from "react-hook-form"
-
-const schema = z.object({
-    email: z.string().email(),
-    password: z.string(),
-})
-
-type ISchema = z.infer<typeof schema>
-
-const handleLogin = async (data: ISchema) => {
-    const response = await api.post("/user/login", {
-        data,
-    })
-
-    return await response.data
-}
+import { useLogin } from "./useLogin"
 
 export const LoginForm = () => {
-    const { register, handleSubmit } = useForm({
-        mode: "all",
-        resolver: zodResolver(schema),
-    })
+    const { handleLogin, handleSubmit, register, errors } = useLogin()
     const [show, setShow] = useState(true)
 
     function handleClick(e: SyntheticEvent) {
