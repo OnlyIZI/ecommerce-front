@@ -4,7 +4,7 @@ import { Moon } from "@/icons/moon"
 import { SideBarReverse } from "@/icons/sideBarReverse"
 import { Star } from "@/icons/star"
 import { Sun } from "@/icons/sun"
-import { useAside } from "@/store/useAside"
+import { useAside } from "@/context/useAside"
 import { useTheme } from "next-themes"
 
 export const HeaderAdmin = () => {
