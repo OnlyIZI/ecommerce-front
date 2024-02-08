@@ -34,7 +34,7 @@ export const InputRoot = React.forwardRef<HTMLDivElement, InputRootProps>(
                 {error && <p className="text-sm text-red-500">{error}</p>}
             </div>
         )
-    }
+    },
 )
 
 /* __________________________container_________________________*/
@@ -56,7 +56,7 @@ const inputContainerVariants = cva(
         defaultVariants: {
             variant: "default",
         },
-    }
+    },
 )
 
 export const InputContainer = React.forwardRef<
@@ -103,7 +103,7 @@ export const InputContent = React.forwardRef<HTMLDivElement, InputContentProps>(
                 {children}
             </div>
         )
-    }
+    },
 )
 
 /* __________________________input_________________________*/
@@ -131,5 +131,5 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 className={cn(inputVariants({ className, variant }))}
             />
         )
-    }
+    },
 )

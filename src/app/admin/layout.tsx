@@ -2,7 +2,7 @@
 import { HeaderAdmin } from "@/app/admin/_components/header"
 import { AsideActivity } from "./_components/asideActivity"
 import { AsideMenu } from "@/app/admin/_components/asideMenu"
-import * as React from 'react'
+import * as React from "react"
 
 export default function AdminLayout({
     children,
@@ -14,8 +14,7 @@ export default function AdminLayout({
             <AsideMenu />
             <div className="flex grow flex-col">
                 <HeaderAdmin />
-                <main>{children}
-                </main>
+                <main>{children}</main>
             </div>
             <aside className="border border-primary-default">
                 <AsideActivity />

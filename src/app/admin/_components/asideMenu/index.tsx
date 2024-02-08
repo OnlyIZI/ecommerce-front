@@ -39,7 +39,7 @@ export const AsideMenu = () => {
             ref={sidebarRef}
             className={cn(
                 "group/aside relative flex w-60 flex-col bg-background transition-all duration-300 ease-in-out",
-                isMobile && "w-0"
+                isMobile && "w-0",
             )}
         >
             {/* sidebar button */}
@@ -47,7 +47,7 @@ export const AsideMenu = () => {
                 role="button"
                 onClick={collapse}
                 className={cn(
-                    "absolute -right-2 top-3 z-50 cursor-pointer rounded-full bg-border opacity-0 transition-all duration-100 ease-in hover:bg-border/40 group-hover/aside:opacity-100"
+                    "absolute -right-2 top-3 z-50 cursor-pointer rounded-full bg-border opacity-0 transition-all duration-100 ease-in hover:bg-border/40 group-hover/aside:opacity-100",
                 )}
             >
                 <LuChevronLeft

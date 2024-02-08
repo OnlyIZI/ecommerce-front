@@ -67,7 +67,7 @@ const AccordionRoot = React.forwardRef<HTMLDivElement, AccordionRootProps>(
                 </Comp>
             </AccordionProvider>
         )
-    }
+    },
 )
 
 // ____________________ Trigger ____________________
@@ -163,7 +163,7 @@ const itemVariants = cva(
         defaultVariants: {
             variant: "default",
         },
-    }
+    },
 )
 
 interface ItemProps
@@ -182,7 +182,7 @@ const AccordionItem = React.forwardRef<HTMLButtonElement, ItemProps>(
                 {...props}
             />
         )
-    }
+    },
 )
 
 AccordionItem.displayName = "AccordionItem"

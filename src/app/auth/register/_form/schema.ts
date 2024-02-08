@@ -16,7 +16,7 @@ export const schema = z
         {
             message: "Your password has to be equal.",
             path: ["confirmPassword"],
-        }
+        },
     )
 
 export type registerSchemaProps = z.infer<typeof schema>

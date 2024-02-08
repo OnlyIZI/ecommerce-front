@@ -1,8 +1,7 @@
 import { registerSchemaProps, schema } from "@/app/auth/register/_form/schema"
-import { useUser } from "@/context/useUser"
 import { api } from "@/lib/api"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 
 export const UseRegister = () => {

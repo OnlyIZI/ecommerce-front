@@ -22,6 +22,6 @@ export const useUser = create(
             login: (data) => set({ user: data, isAuthenticated: true }),
             logout: () => set({ user: null, isAuthenticated: false }),
         }),
-        { name: "user", storage: createJSONStorage(() => sessionStorage) }
-    )
+        { name: "user", storage: createJSONStorage(() => sessionStorage) },
+    ),
 )
