@@ -21,7 +21,10 @@ export const RegisterForm = () => {
     }
 
     return (
-        <form className="flex flex-col gap-3">
+        <form
+            onSubmit={handleSubmit(handleRegister)}
+            className="flex flex-col gap-3"
+        >
             <InputRoot>
                 <InputContainer>
                     <Input placeholder="Nome" {...register("name")} />

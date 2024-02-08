@@ -12,7 +12,7 @@ export const UseRegister = () => {
         handleSubmit,
         reset,
         formState: { errors },
-    } = useForm({
+    } = useForm<registerSchemaProps>({
         mode: "onSubmit",
         criteriaMode: "all",
         resolver: zodResolver(schema),
@@ -24,12 +24,11 @@ export const UseRegister = () => {
         const response = await api.post("/user/register", {
             user,
         })
+        console.log(response.status)
 
         if (response.status == 201) {
             router.push("/")
         }
-
-        reset()
     }
 
     return {
