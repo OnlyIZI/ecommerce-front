@@ -1,7 +1,7 @@
 import * as React from "react"
 
 // Icons
-import { LuChevronRight } from "react-icons/lu"
+import { ChevronRight } from "lucide-react"
 
 // help
 import { cva, type VariantProps } from "class-variance-authority"
@@ -19,7 +19,11 @@ const AccordionContext = React.createContext<AccordionContextProps>({
     handleState() {},
 })
 
-const AccordionProvider = ({ children }: { children: React.ReactNode }) => {
+export const AccordionProvider = ({
+    children,
+}: {
+    children: React.ReactNode
+}) => {
     const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
     const handleState = () => {
@@ -34,7 +38,7 @@ const AccordionProvider = ({ children }: { children: React.ReactNode }) => {
 }
 
 // ____________________ Root ____________________
-const rootVariants = cva("w-full rounded-md px-2 py-1", {
+const rootVariants = cva("w-full rounded-md border border-border/10", {
     variants: {
         variant: {
             default: "hover:bg-border/10",
@@ -63,7 +67,13 @@ const AccordionRoot = React.forwardRef<HTMLDivElement, AccordionRootProps>(
                     className={cn(rootVariants({ variant }))}
                     {...props}
                 >
-                    {children}
+                    {children ? (
+                        children
+                    ) : (
+                        <AccordionTrigger className="bg-border">
+                            Empty
+                        </AccordionTrigger>
+                    )}
                 </Comp>
             </AccordionProvider>
         )
@@ -72,7 +82,7 @@ const AccordionRoot = React.forwardRef<HTMLDivElement, AccordionRootProps>(
 
 // ____________________ Trigger ____________________
 
-const triggerVariants = cva("flex items-center gap-1 w-full", {
+const triggerVariants = cva("flex items-center gap-1 w-full px-2 py-1", {
     variants: {
         variant: {
             default: "",
@@ -103,10 +113,14 @@ const AccordionTrigger = React.forwardRef<
             onClick={handleState}
             className={cn(triggerVariants({ variant, className }))}
         >
-            <LuChevronRight
+            <ChevronRight
                 className={`h-4 w-4 transition-all duration-300 ease-in-out ${isOpen && "rotate-90"}`}
             />
-            <Comp ref={ref} {...props}></Comp>
+            <Comp
+                ref={ref}
+                {...props}
+                className="flex items-center gap-1 text-foreground"
+            ></Comp>
         </div>
     )
 })
@@ -153,11 +167,11 @@ AccordionContent.displayName = "AccordionContent"
 
 // ____________________ Item ____________________
 const itemVariants = cva(
-    "px-2 py-1 text-start rounded-md font-light text-border hover:text-white w-full",
+    "px-2 py-1 text-start rounded-md font-light w-full my-1",
     {
         variants: {
             variant: {
-                default: "hover:bg-border/20",
+                default: "hover:bg-border/10",
             },
         },
         defaultVariants: {

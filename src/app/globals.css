@@ -4,38 +4,48 @@
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --primary: 0 0% 11%;
-        --primary-blue: 201 100% 95%;
+        --background: 240 14% 97%;
+        --foreground: 0 0% 11%;
+
+        --primary: 211 99% 55%;
         --primary-foreground: 0 0% 100%;
-        --secondary: 231 94% 79%;
-        --secondary-foreground: 0 0% 11%;
-        --semantic: 205 40% 76%;
-        --destructive: 0 100% 64%;
-        --destructive-foreground: 0 0% 98%;
-        --success: 158 54% 76%;
-        --success-foreground: 0 0% 100%;
-        --warn: 47 100% 80%;
-        --warn-foreground: 0 0% 11%;
-        --border: 0 0% 40%;
-        --input: 218 15% 21% 0.1;
+        --primary-light: 201 100% 95%;
+
+        --secondary: 280 68% 60%;
+        --secondary-foreground: 0 0% 100%;
+
+        --disable: 215 49% 93%;
+        --green: 135 59% 49%;
+        --mint: 177 100% 39%;
+        --yellow: 48 100% 50%;
+        --orange: 35 100% 50%;
+        --red: 3 100% 59%;
+        --border: 218 15% 21%;
+        --input: 218 15% 21%;
+
+        --radius: 0.5rem;
     }
 
     .dark {
         --background: 0 0% 11%;
-        --primary: 239 78% 87%;
-        --primary-blue: 201 100% 95%;
-        --primary-foreground: 0 0% 11%;
-        --secondary: 231 94% 79%;
-        --secondary-foreground: 0 0% 11%;
-        --semantic: 205 40% 76%;
-        --destructive: 0 100% 64%;
-        --destructive-foreground: 0 0% 98%;
-        --success: 158 54% 76%;
-        --success-foreground: 0 0% 100%;
-        --warn: 47 100% 80%;
-        --warn-foreground: 0 0% 11%;
-        --border: 0 0% 60%;
-        --input: 218, 15% 21% 0.8;
+        --foreground: 0 0% 100%;
+
+        --primary: 211 99% 55%;
+        --primary-foreground: 0 0% 100%;
+        --primary-light: 201 100% 95%;
+
+        --secondary: 280 68% 60%;
+        --secondary-foreground: 0 0% 100%;
+
+        --disable: 215 49% 93%;
+        --green: 135 59% 49%;
+        --mint: 177 100% 39%;
+        --yellow: 48 100% 50%;
+        --orange: 35 100% 50%;
+        --red: 3 100% 59%;
+        --border: 218 15% 21%;
+        --input: 218 15% 21%;
+
+        --radius: 0.5rem;
     }
 }
