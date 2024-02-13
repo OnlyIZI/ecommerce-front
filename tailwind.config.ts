@@ -26,6 +26,11 @@ const config: Config = {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input)",
             },
+            borderRadius: {
+                lg: "var(--radius)",
+                md: "calc(var(--radius) - 2px)",
+                sm: "calc(var(--raiuds) - 4px)",
+            },
         },
     },
     plugins: [],
