@@ -4,6 +4,17 @@ import { Meta, StoryObj } from "@storybook/react"
 const meta = {
     title: "Components/loading",
     component: Loading,
+    parameters: {
+        layout: "centered",
+    },
+    argTypes: {
+        size: {
+            options: ['sm', 'md', 'lg', 'xl'],
+            control: {
+                type: "inline-radio",
+            },
+        },
+    },
 } satisfies Meta<typeof Loading>
 
 export default meta

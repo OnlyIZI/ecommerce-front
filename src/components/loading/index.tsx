@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 import { cva, type VariantProps } from "class-variance-authority"
-import { LuRotateCw } from "react-icons/lu"
+import { RotateCw } from "lucide-react"
 
 const loadingVariants = cva("animate-spin text-primary", {
     variants: {
@@ -19,5 +19,5 @@ const loadingVariants = cva("animate-spin text-primary", {
 interface loadingProps extends VariantProps<typeof loadingVariants> {}
 
 export const Loading = ({ size }: loadingProps) => {
-    return <LuRotateCw className={cn(loadingVariants({ size }))} />
+    return <RotateCw className={cn(loadingVariants({ size }))} />
 }

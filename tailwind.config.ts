@@ -11,24 +11,18 @@ const config: Config = {
         extend: {
             colors: {
                 background: "hsl(var(--background))",
-                primary: {
-                    default: "hsl(var(--primary))",
-                    blue: "hsl(var(--primary-blue))",
-                    foreground: "hsl(var(--primary-foreground))",
-                },
-                secondary: {
-                    default: "hsl(var(--secondary))",
-                    foreground: "hsl(var(--secondary-foreground))",
-                },
-                semantic: "hsl(var(--semantic))",
-                success: {
-                    default: "hsl(var(--success))",
-                    foreground: "hsl(var(--success-foreground))",
-                },
-                warn: {
-                    default: "hsl(var(--warn))",
-                    foreground: "hsl(var(--warn-foreground))",
-                },
+                foreground: "hsl(var(--foreground))",
+                primary: "hsl(var(--primary))",
+                "primary-foreground": "hsl(var(--primary-foregound))",
+                "primary-light": "hsl(var(--primary-light))",
+                secondary: "hsl(var(--secondary))",
+                "secondary-foreground": "hsl(var(--secondary-foreground))",
+                disable: "hsl(var(--disable))",
+                green: "hsl(var(--green))",
+                mint: "hsl(var(--mint))",
+                yellow: "hsl(var(--yellow))",
+                orange: "hsl(var(--orange))",
+                red: "hsl(var(--red))",
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input)",
             },
